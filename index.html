@@ -1,58 +1,21 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Simple Counter</title>
-    <style>
-        .button-group {
-            text-align: center;
-        }
-
-        button {
-            margin: 5px;
-        }
-    </style>
-</head>
-<body>
+  <body>
     <div id="root"></div>
 
-    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
     <script type="text/babel">
-        class Counter extends React.Component {
-            constructor(props) {
-                super(props);
-                this.state = { count: 0 };
-            }
-
-            incrementCount = () => {
-                this.setState({ count: this.state.count + 1 });
-            }
-
-            decrementCount = () => {
-                this.setState({ count: this.state.count - 1 });
-            }
-
-            resetCount = () => {
-                this.setState({ count: 0 });
-            }
-
-            render() {
-                return (
-                    <div>
-                        <h1>Jek Counter</h1>
-                        <p>Count: {this.state.count}</p>
-                        <button onClick={this.decrementCount}>-</button>
-                        <button onClick={this.resetCount}>Reset</button>
-                        <button onClick={this.incrementCount}>+</button>
-                    </div>
-                );
-            }
-        }
-
-        const rootElement = document.getElementById("root");
-        ReactDOM.render(<Counter />, rootElement);
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(
+        <>
+          <h1 className="heading">Ez React👾</h1>
+          <img src="PixelWatermelon.png" width="80" alt="My Image" />
+          <p onClick={e => {alert('ok!')}}>React is ez right?</p>
+        </>
+      );
     </script>
-</body>
+  </body>
 </html>
